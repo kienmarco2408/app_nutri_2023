@@ -12,8 +12,10 @@ import {
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import CardBreakfast from "../screenComponent/CardBreakfast";
+import { useNavigation } from "@react-navigation/native";
 
 const MenuForMeal = () => {
+  const navigation = useNavigation();
   return (
     <View>
       <ScrollView style={{ height: "160%" }}>
@@ -57,6 +59,7 @@ const MenuForMeal = () => {
           <CardBreakfast />
         </View>
         <TouchableOpacity
+          onPress={() => navigation.navigate("DetailMenu")}
           style={{
             width: "80%",
             height: 41,
@@ -114,6 +117,7 @@ const MenuForMeal = () => {
             <CardBreakfast />
           </View>
           <TouchableOpacity
+            onPress={() => navigation.navigate("DetailMenu")}
             style={{
               width: "80%",
               height: 41,

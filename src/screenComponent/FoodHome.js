@@ -41,7 +41,15 @@ const FoodHome = () => {
   return food.map((data, index) => {
     return (
       <TouchableOpacity
-        onPress={() => navigation.navigate("DietDetail")}
+        onPress={() =>
+          navigation.navigate("DietDetail", {
+            title: data.title,
+            img: data.img,
+            firstContent: data.firstContent,
+            aim: data.aim,
+            day: data.day,
+          })
+        }
         key={index}
         style={{
           height: 135,

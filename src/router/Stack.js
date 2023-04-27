@@ -28,6 +28,7 @@ import ModeScreen from "../screen/ModeScreen";
 import DetailIngredient from "../screen/DetailIngredient";
 import MealDetail from "../screen/MealDetail";
 import DietDetail from "../screen/DietDetail";
+import DetailMenu from "../screen/DetailMenu";
 
 const HomeStack = createNativeStackNavigator();
 function HomeStacks() {
@@ -52,6 +53,7 @@ function AddStacks() {
       <AddStack.Screen name="ModeScreen" component={ModeScreen} />
       <AddStack.Screen name="DetailIngredient" component={DetailIngredient} />
       <AddStack.Screen name="MealDetail" component={MealDetail} />
+      <AddStack.Screen name="DetailMenu" component={DetailMenu} />
     </AddStack.Navigator>
   );
 }

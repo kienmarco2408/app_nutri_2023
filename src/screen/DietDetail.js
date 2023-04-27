@@ -1,16 +1,29 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
-import { AntDesign, FontAwesome, Ionicons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import {
+  AntDesign,
+  FontAwesome,
+  Ionicons,
+  MaterialCommunityIcons,
+} from "@expo/vector-icons";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import ListCardDiet from "../screenComponent/ListCardDiet";
 
 const DietDetail = () => {
   const navigation = useNavigation();
+  const route = useRoute();
+  const { title } = route.params;
+  const { img } = route.params;
+  const { firstContent } = route.params;
+  const { aim } = route.params;
+  const { day } = route.params;
+
   return (
     <View>
-      <View>
+      <ScrollView>
         <Image
-          source={require("../storages/list/pic6.png")}
+          source={img}
           style={{ width: "100%", height: 301, position: "absolute" }}
         />
         <View style={{ marginTop: "10%", marginLeft: "8%" }}>
@@ -29,10 +42,10 @@ const DietDetail = () => {
           </TouchableOpacity>
           <View style={{ marginTop: "8%" }}>
             <Text style={{ fontWeight: "700", fontSize: 20, color: "white" }}>
-              Protein Diet
+              {title}
             </Text>
             <Text style={{ fontSize: 10, color: "white", marginTop: "1%" }}>
-              Chế độ ăn đạm
+              {firstContent}
             </Text>
           </View>
           <View>
@@ -52,7 +65,7 @@ const DietDetail = () => {
                 <Text
                   style={{ color: "#00113D", fontSize: 8, fontWeight: "700" }}
                 >
-                  Thời gian: <Text style={{ fontWeight: "400" }}>7 ngay</Text>
+                  Thời gian: <Text style={{ fontWeight: "400" }}>{day}</Text>
                 </Text>
               </View>
               <View
@@ -69,7 +82,7 @@ const DietDetail = () => {
                 <Text
                   style={{ color: "#00113D", fontSize: 8, fontWeight: "700" }}
                 >
-                  Mục đích: <Text style={{ fontWeight: "400" }}>Tang co</Text>
+                  Mục đích: <Text style={{ fontWeight: "400" }}>{aim}</Text>
                 </Text>
               </View>
             </View>
@@ -188,9 +201,30 @@ const DietDetail = () => {
               </View>
             </View>
           </View>
-          <View></View>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginHorizontal: "5%",
+              marginTop: "5%",
+            }}
+          >
+            <MaterialCommunityIcons
+              name="note-text"
+              size={24}
+              color="#00113D"
+            />
+            <Text
+              style={{ marginLeft: "3%", color: "#00113D", fontWeight: "700" }}
+            >
+              Thực đơn 7 ngày
+            </Text>
+          </View>
+          <View>
+            <ListCardDiet />
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 };
