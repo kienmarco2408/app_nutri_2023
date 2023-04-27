@@ -21,7 +21,7 @@ const Logo = () => {
           textTransform: "uppercase",
         }}
       >
-        Balance
+        Heathy Diet
       </Text>
       <Text
         style={{

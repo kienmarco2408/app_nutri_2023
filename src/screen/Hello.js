@@ -10,7 +10,7 @@ const Hello = () => {
       onPress={() => navigation.navigate("AimForm")}
       style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
     >
-      <Text style={styles.text}>Chào NAM,</Text>
+      <Text style={styles.text}>Chào TÙNG,</Text>
       <Text style={styles.textdescription}>
         Cùng làm quen nhau với vài câu hỏi nào!
       </Text>

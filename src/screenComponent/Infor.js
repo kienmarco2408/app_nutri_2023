@@ -22,7 +22,7 @@ const Infor = () => {
         />
         <View style={{ marginLeft: 12 }}>
           <Text style={{ fontWeight: "bold", color: "#0047D7", fontSize: 14 }}>
-            Chào Nam!
+            Chào Tùng!
           </Text>
           <Text style={{ fontSize: 10, color: "#0047D7", fontWeight: "300" }}>
             Hãy xây dựng kế hoạch dinh dưỡng cho hôm nay nào!

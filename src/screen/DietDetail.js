@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
-import { AntDesign, FontAwesome } from "@expo/vector-icons";
+import { AntDesign, FontAwesome, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 const DietDetail = () => {
@@ -119,7 +119,12 @@ const DietDetail = () => {
               </View>
               <View style={{ marginTop: "3%" }}>
                 <Text
-                  style={{ fontWeight: "700", color: "white", fontSize: 12 }}
+                  style={{
+                    fontWeight: "700",
+                    color: "white",
+                    fontSize: 12,
+                    textAlign: "justify",
+                  }}
                 >
                   Chất đạm (Protein)
                   <Text style={{ fontWeight: "400" }}>
@@ -127,10 +132,63 @@ const DietDetail = () => {
                     tổng hợp.
                   </Text>
                 </Text>
-                <Text></Text>
+                <Text
+                  style={{
+                    fontWeight: "400",
+                    color: "white",
+                    fontSize: 12,
+                    marginTop: "5%",
+                    textAlign: "justify",
+                  }}
+                >
+                  Các chuyên gia dinh dưỡng trên Thế giới đều cho rằng thực đơn
+                  khoa học áp dụng để giảm cân cần có chế độ ăn giàu protein.
+                </Text>
+                <Text
+                  style={{
+                    fontWeight: "400",
+                    color: "white",
+                    fontSize: 12,
+                    marginTop: "5%",
+                    textAlign: "justify",
+                  }}
+                >
+                  Bởi vì nhóm chất sẽ giúp cơ thể đẩy mạnh lượng calo đốt cháy
+                  bằng cách gia tăng tốc độ trao đổi chất, đồng thời còn làm
+                  giảm cảm giác thèm ăn.
+                </Text>
+              </View>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  marginTop: "3%",
+                }}
+              >
+                <Ionicons name="alert-circle" size={24} color="white" />
+                <Text
+                  style={{
+                    fontWeight: "700",
+                    color: "white",
+                    fontSize: 14,
+                    textAlign: "justify",
+                    marginLeft: "5%",
+                  }}
+                >
+                  Lưu ý
+                </Text>
+              </View>
+              <View style={{ marginTop: "2%" }}>
+                <Text style={{ color: "white", fontSize: 12 }}>
+                  1. Tổng calo nạp vào nhỏ hơn calo tiêu thụ.
+                </Text>
+                <Text style={{ color: "white", fontSize: 12 }}>
+                  2. Chia nhỏ bữa ăn trong ngày
+                </Text>
               </View>
             </View>
           </View>
+          <View></View>
         </View>
       </View>
     </View>
