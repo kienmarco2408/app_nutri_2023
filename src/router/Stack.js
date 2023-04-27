@@ -24,6 +24,7 @@ import AddNewDiaryMeal from "../screen/AddNewDiaryMeal";
 import Meal from "../screen/Meal";
 import IngredientScreen from "../screen/IngredientScreen";
 import DietScreen from "../screen/DietScreen";
+import ModeScreen from "../screen/ModeScreen";
 
 const HomeStack = createNativeStackNavigator();
 function HomeStacks() {
@@ -45,6 +46,7 @@ function AddStacks() {
       <AddStack.Screen name="Meal" component={Meal} />
       <AddStack.Screen name="IngredientScreen" component={IngredientScreen} />
       <AddStack.Screen name="DietScreen" component={DietScreen} />
+      <AddStack.Screen name="ModeScreen" component={ModeScreen} />
     </AddStack.Navigator>
   );
 }

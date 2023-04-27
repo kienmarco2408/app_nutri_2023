@@ -1,9 +1,12 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const ModeCard = () => {
+  const navigation = useNavigation()
   return (
     <TouchableOpacity
+    onPress={()=>navigation.navigate('ModeScreen')}
       style={{
         width: 150,
         height: 150,

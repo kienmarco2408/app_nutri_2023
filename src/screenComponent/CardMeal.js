@@ -38,6 +38,7 @@ const CardMeal = () => {
       {listmeal.map((item) => {
         return (
           <View
+          key={item.id}
             style={[
               {
                 width: "80%",
