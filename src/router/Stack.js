@@ -1,26 +1,29 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native';
-import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
-import LogIn from '../screen/Login';
-import Home from '../screen/Home';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Add from '../screen/Add';
-import Signin from '../screen/SignIn';
-import Recipe from '../screen/Recipe';
-import Follow from '../screen/Follow';
-import Hello from '../screen/Hello';
-import AimForm from '../screen/AimForm';
-import GenderForm from '../screen/GenderForm';
-import AgeForm from '../screen/AgeForm';
-import WeightForm from '../screen/WeightForm';
-import WeightWantForm from '../screen/WeightWantForm';
-import MonthForm from '../screen/MonthForm';
-import DoneForm from '../screen/DoneForm';
-import HistorySeach from '../screen/HistorySeach';
-import DiaryMeal from '../screen/DiaryMeal';
-import AddNewDiaryMeal from '../screen/AddNewDiaryMeal';
+import { View, Text, Image, TouchableOpacity } from "react-native";
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
+import LogIn from "../screen/Login";
+import Home from "../screen/Home";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Add from "../screen/Add";
+import Signin from "../screen/SignIn";
+import Recipe from "../screen/Recipe";
+import Follow from "../screen/Follow";
+import Hello from "../screen/Hello";
+import AimForm from "../screen/AimForm";
+import GenderForm from "../screen/GenderForm";
+import AgeForm from "../screen/AgeForm";
+import WeightForm from "../screen/WeightForm";
+import WeightWantForm from "../screen/WeightWantForm";
+import MonthForm from "../screen/MonthForm";
+import DoneForm from "../screen/DoneForm";
+import HistorySeach from "../screen/HistorySeach";
+import DiaryMeal from "../screen/DiaryMeal";
+import AddNewDiaryMeal from "../screen/AddNewDiaryMeal";
+import Meal from "../screen/Meal";
+import IngredientScreen from "../screen/IngredientScreen";
+import DietScreen from "../screen/DietScreen";
 
 const HomeStack = createNativeStackNavigator();
 function HomeStacks() {
@@ -39,6 +42,9 @@ function AddStacks() {
       <AddStack.Screen name="HistorySeach" component={HistorySeach} />
       <AddStack.Screen name="DiaryMeal" component={DiaryMeal} />
       <AddStack.Screen name="AddNewDiaryMeal" component={AddNewDiaryMeal} />
+      <AddStack.Screen name="Meal" component={Meal} />
+      <AddStack.Screen name="IngredientScreen" component={IngredientScreen} />
+      <AddStack.Screen name="DietScreen" component={DietScreen} />
     </AddStack.Navigator>
   );
 }
@@ -63,7 +69,7 @@ function FollowStacks() {
 
 const CustomTabBarButton = ({ children, onPress }) => (
   <TouchableOpacity
-    style={{ top: -30, justifyContent: 'center', alignItems: 'center' }}
+    style={{ top: -30, justifyContent: "center", alignItems: "center" }}
     onPress={onPress}
   >
     <View style={{ width: 70, height: 70, borderRadius: 35 }}>{children}</View>
@@ -78,10 +84,10 @@ function Tabs() {
         tabBarShowLabel: false,
         tabBarStyle: {
           elevation: 0,
-          backgroundColor: '#FFFFFF',
-          width: '100%',
-          height: '9%',
-          shadowColor: '#FFF9EC',
+          backgroundColor: "#FFFFFF",
+          width: "100%",
+          height: "9%",
+          shadowColor: "#FFF9EC",
           shadowOffset: {
             width: 5,
             height: 3,
@@ -101,24 +107,24 @@ function Tabs() {
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                top: '-5%',
+                alignItems: "center",
+                justifyContent: "center",
+                top: "-5%",
               }}
             >
               <Image
-                source={require('../storages/nav/home.png')}
+                source={require("../storages/nav/home.png")}
                 resizeMode="contain"
                 style={{
                   width: 18.72,
                   height: 18.72,
-                  tintColor: focused ? '#0047D7' : '#9BB7F0',
+                  tintColor: focused ? "#0047D7" : "#9BB7F0",
                 }}
               ></Image>
               <Text
                 style={{
                   fontSize: 12,
-                  color: focused ? '#0047D7' : '#9BB7F0',
+                  color: focused ? "#0047D7" : "#9BB7F0",
                   marginTop: 6,
                 }}
               >
@@ -137,26 +143,26 @@ function Tabs() {
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                top: '5%',
+                alignItems: "center",
+                justifyContent: "center",
+                top: "5%",
               }}
             >
               <Image
-                source={require('../storages/nav/recipe.png')}
+                source={require("../storages/nav/recipe.png")}
                 resizeMode="contain"
                 style={{
                   width: 18.72,
                   height: 18.72,
-                  tintColor: focused ? '#0047D7' : '#9BB7F0',
+                  tintColor: focused ? "#0047D7" : "#9BB7F0",
                 }}
               ></Image>
               <Text
                 style={{
                   fontSize: 12,
                   marginTop: 6,
-                  color: focused ? '#0047D7' : '#9BB7F0',
-                  textAlign: 'center',
+                  color: focused ? "#0047D7" : "#9BB7F0",
+                  textAlign: "center",
                   width: 100,
                 }}
               >
@@ -174,25 +180,25 @@ function Tabs() {
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                top: '-5%',
+                alignItems: "center",
+                justifyContent: "center",
+                top: "-5%",
               }}
             >
               <Image
-                source={require('../storages/nav/follow.png')}
+                source={require("../storages/nav/follow.png")}
                 resizeMode="contain"
                 style={{
                   width: 18.72,
                   height: 18.72,
-                  tintColor: focused ? '#0047D7' : '#9BB7F0',
+                  tintColor: focused ? "#0047D7" : "#9BB7F0",
                 }}
               ></Image>
               <Text
                 style={{
                   fontSize: 12,
                   marginTop: 6,
-                  color: focused ? '#0047D7' : '#9BB7F0',
+                  color: focused ? "#0047D7" : "#9BB7F0",
                 }}
               >
                 Theo Dõi
@@ -210,8 +216,8 @@ function Tabs() {
             <View
               style={{
                 top: -30,
-                justifyContent: 'center',
-                alignItems: 'center',
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
               <View
@@ -219,25 +225,25 @@ function Tabs() {
                   width: 70,
                   height: 70,
                   borderRadius: 35,
-                  backgroundColor: focused ? '#0047D7' : '#D9E3F9',
-                  justifyContent: 'center',
-                  alignItems: 'center',
+                  backgroundColor: focused ? "#0047D7" : "#D9E3F9",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
                 <Image
-                  source={require('../storages/nav/add.png')}
+                  source={require("../storages/nav/add.png")}
                   resizeMode="contain"
                   style={{
                     width: 24,
                     height: 24,
-                    tintColor: focused ? '#9BB7F0' : '#9BB7F0',
+                    tintColor: focused ? "#9BB7F0" : "#9BB7F0",
                   }}
                 ></Image>
               </View>
               <Text
                 style={{
                   fontSize: 12,
-                  color: focused ? '#0047D7' : '#9BB7F0',
+                  color: focused ? "#0047D7" : "#9BB7F0",
                   marginTop: 6,
                 }}
               >
