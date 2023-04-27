@@ -1,8 +1,10 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const FoodHome = () => {
+  const navigation = useNavigation();
   const food = [
     {
       id: 1,
@@ -38,7 +40,8 @@ const FoodHome = () => {
 
   return food.map((data, index) => {
     return (
-      <View
+      <TouchableOpacity
+        onPress={() => navigation.navigate("DietDetail")}
         key={index}
         style={{
           height: 135,
@@ -133,7 +136,7 @@ const FoodHome = () => {
             </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   });
 };

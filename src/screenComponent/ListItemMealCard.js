@@ -26,19 +26,19 @@ const ListItemMealCard = () => {
     },
     {
       id: 2,
-      title: "Thịt",
+      title: "Thủy, hải sản",
       img: require("../storages/list/savepic1.png"),
       ingredient: "100 nguyên liệu, món",
     },
     {
       id: 3,
-      title: "Thịt",
+      title: "Rau củ",
       img: require("../storages/list/savepic1.png"),
       ingredient: "100 nguyên liệu, món",
     },
     {
       id: 4,
-      title: "Thịt",
+      title: "Hoa quả",
       img: require("../storages/list/savepic1.png"),
       ingredient: "100 nguyên liệu, món",
     },
@@ -59,7 +59,11 @@ const ListItemMealCard = () => {
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
-              onPress={() => navigation.navigate}
+              onPress={() =>
+                navigation.navigate("DetailIngredient", {
+                  title: item.title,
+                })
+              }
               style={{
                 width: "40%",
                 height: 197,

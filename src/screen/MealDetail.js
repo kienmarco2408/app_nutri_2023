@@ -1,27 +1,26 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { AntDesign, Feather, MaterialCommunityIcons } from "@expo/vector-icons";
-import SearchBar from "./SearchBar";
-import InputSearch from "./InputSearch";
-import GroupScreenDiaryAdd from "./GroupScreenDiaryAdd";
-import { useNavigation } from "@react-navigation/native";
+import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
+import InputSearch from "../screenComponent/InputSearch";
+import CardBreakfast from "../screenComponent/CardBreakfast";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import GroupScreenMeal from "../screenComponent/GroupScreenMeal";
 
-const HeaderAddNewDiary = () => {
+const MealDetail = () => {
   const navigation = useNavigation();
+  const route = useRoute();
+  const { title } = route.params;
   return (
-    <View>
+    <View style={{ height: "100%" }}>
       <View
         style={{
           width: "100%",
           paddingTop: "5%",
           height: 170,
           backgroundColor: "#CCE9F2",
+          borderBottomLeftRadius: 20,
+          borderBottomRightRadius: 20,
         }}
       >
         <View
@@ -49,12 +48,12 @@ const HeaderAddNewDiary = () => {
               fontSize: 16,
               fontWeight: "700",
               textAlign: "center",
-              marginLeft: "16%",
+              marginLeft: "15%",
               color: "black",
               width: "45%",
             }}
           >
-            Nhật ký dinh dưỡng
+            {title}
           </Text>
           <View
             style={{
@@ -80,13 +79,13 @@ const HeaderAddNewDiary = () => {
           <InputSearch />
         </View>
         <View>
-          <GroupScreenDiaryAdd />
+          <GroupScreenMeal />
         </View>
       </View>
     </View>
   );
 };
 
-export default HeaderAddNewDiary;
+export default MealDetail;
 
 const styles = StyleSheet.create({});

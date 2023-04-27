@@ -1,26 +1,22 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { AntDesign, Feather, MaterialCommunityIcons } from "@expo/vector-icons";
-import SearchBar from "./SearchBar";
-import InputSearch from "./InputSearch";
-import GroupScreenDiaryAdd from "./GroupScreenDiaryAdd";
-import { useNavigation } from "@react-navigation/native";
+import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
+import InputSearch from "../screenComponent/InputSearch";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import CardBreakfast from "../screenComponent/CardBreakfast";
 
-const HeaderAddNewDiary = () => {
+const DetailIngredient = () => {
+  const route = useRoute();
   const navigation = useNavigation();
+  const { title } = route.params;
   return (
-    <View>
+    <View style={{ paddingBottom: "35%" }}>
       <View
         style={{
           width: "100%",
           paddingTop: "5%",
-          height: 170,
+          height: 150,
           backgroundColor: "#CCE9F2",
         }}
       >
@@ -49,12 +45,12 @@ const HeaderAddNewDiary = () => {
               fontSize: 16,
               fontWeight: "700",
               textAlign: "center",
-              marginLeft: "16%",
+              marginLeft: "15%",
               color: "black",
               width: "45%",
             }}
           >
-            Nhật ký dinh dưỡng
+            {title}
           </Text>
           <View
             style={{
@@ -79,14 +75,14 @@ const HeaderAddNewDiary = () => {
         <View style={{ alignSelf: "center" }}>
           <InputSearch />
         </View>
-        <View>
-          <GroupScreenDiaryAdd />
-        </View>
       </View>
+      <ScrollView style={{ marginTop: "5%", height: "100%" }}>
+        <CardBreakfast />
+      </ScrollView>
     </View>
   );
 };
 
-export default HeaderAddNewDiary;
+export default DetailIngredient;
 
 const styles = StyleSheet.create({});

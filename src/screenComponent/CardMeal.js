@@ -1,8 +1,10 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const CardMeal = () => {
+  const navigation = useNavigation();
   const listmeal = [
     {
       id: 1,
@@ -38,7 +40,7 @@ const CardMeal = () => {
       {listmeal.map((item) => {
         return (
           <View
-          key={item.id}
+            key={item.id}
             style={[
               {
                 width: "80%",
@@ -88,9 +90,15 @@ const CardMeal = () => {
                 </View>
               </View>
 
-              <View style={{}}>
-                <AntDesign name="rightcircleo" size={18} color="white" />
-              </View>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("MealDetail", {
+                    title: item.title,
+                  })
+                }
+              >
+                <AntDesign name="rightcircleo" size={20} color="white" />
+              </TouchableOpacity>
             </View>
           </View>
         );

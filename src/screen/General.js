@@ -9,7 +9,7 @@ import CardBreakfast from "../screenComponent/CardBreakfast";
 const General = () => {
   return (
     <View style={{ flex: 1, height: "100%" }}>
-      <View style={{ alignItems: "center" }}>
+      <View style={{}}>
         <CardBreakfast />
       </View>
       <View
@@ -89,7 +89,6 @@ const General = () => {
           flexDirection: "row",
           marginTop: "5%",
           marginHorizontal: "7%",
-          alignItems: "center",
         }}
       >
         <CardSuggest />

@@ -1,8 +1,10 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const ListModeCard = () => {
+  const navigation = useNavigation();
   const listmode = [
     {
       id: 1,
@@ -84,7 +86,12 @@ const ListModeCard = () => {
               <Text style={{ fontSize: 12, color: "#7B6F72" }}>
                 {item.meal}
               </Text>
-              <View
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("DetailIngredient", {
+                    title: item.title,
+                  })
+                }
                 style={{
                   backgroundColor: "white",
                   width: 94,
@@ -96,7 +103,7 @@ const ListModeCard = () => {
                 }}
               >
                 <Text style={{ color: "#00113D", fontSize: 12 }}>Xem thêm</Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
 
