@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import CardSearch from "../screenComponent/CardSearch";
