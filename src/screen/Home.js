@@ -10,7 +10,10 @@ import { FontAwesome, Ionicons } from "@expo/vector-icons";
 
 const Home = () => {
   return (
-    <ScrollView style={{ height: "100%", backgroundColor: "white" }}>
+    <ScrollView
+      nestedScrollEnabled={true}
+      style={{ height: "100%", backgroundColor: "white" }}
+    >
       <View>
         <View>
           <ProgressCalo />
