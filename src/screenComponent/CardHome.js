@@ -29,6 +29,7 @@ const CardHome = () => {
   const [imglistToDelete, setImglistToDelete] = useState(null);
 
   const handleDeleteItem = (id) => {
+    setItemIdToDelete(id);
     setImglistToDelete(id);
     setModalVisible(true);
   };
@@ -74,10 +75,10 @@ const CardHome = () => {
           style={{
             borderWidth: 0.1,
             height: 70,
-            borderRadius: 10,
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
+            borderRadius: 5,
             backgroundColor: "#fff",
             shadowColor: "#000",
             shadowOffset: { width: 0, height: 2 },

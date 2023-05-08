@@ -1,7 +1,7 @@
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { Platform, Text } from "react-native";
+import { ImageBackground, Platform, Pressable, Text } from "react-native";
 import { StyleSheet } from "react-native";
 import { View, TextInput, Button, Alert } from "react-native";
 
@@ -26,59 +26,72 @@ function AgeForm() {
 
   return (
     <View>
-      <View
+      <ImageBackground
+        source={require("../storages/backgoundimg.png")}
         style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          marginHorizontal: "5%",
-          marginTop: "10%",
+          height: "100%",
+          width: "100%",
         }}
       >
-        <AntDesign
-          name="arrowleft"
-          size={40}
-          color="black"
-          onPress={() => navigation.goBack()}
-        />
-        <AntDesign
-          name="arrowright"
-          size={40}
-          color="black"
-          onPress={() => navigation.navigate("WeightForm")}
-        />
-      </View>
-      <Text
-        style={{
-          textAlign: "center",
-          fontWeight: "700",
-          fontSize: 20,
-          color: "#3E445F",
-          marginBottom: 32,
-          marginTop: "40%",
-        }}
-      >
-        Chiều cao:
-      </Text>
-      <View
-        style={{
-          flexDirection: "row",
-          borderBottomWidth: 1,
-          width: 288,
-          alignSelf: "center",
-          height: 30,
-          alignItems: "center",
-        }}
-      >
-        <TextInput
-          placeholder="Nhập tuổi của bạn"
-          keyboardType="numeric"
-          value={age}
-          onChangeText={handleAgeChange}
-          style={{ width: 288 }}
-        />
-        <Text>cm</Text>
-      </View>
-      <Button title="Xác nhận" onPress={handleSubmit} />
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginHorizontal: "5%",
+            marginTop: "8%",
+          }}
+        >
+          <AntDesign
+            name="arrowleft"
+            size={40}
+            color="black"
+            onPress={() => navigation.goBack()}
+          />
+          <AntDesign
+            name="arrowright"
+            size={40}
+            color="black"
+            onPress={() => navigation.navigate("HeightForm")}
+          />
+        </View>
+        <Text
+          style={{
+            textAlign: "center",
+            fontWeight: "700",
+            fontSize: 20,
+            color: "#3E445F",
+            marginBottom: 32,
+            marginTop: "40%",
+          }}
+        >
+          Tuổi của bạn:
+        </Text>
+        <View
+          style={{
+            flexDirection: "row",
+            borderBottomWidth: 1,
+            width: 288,
+            alignSelf: "center",
+            height: 30,
+            alignItems: "center",
+          }}
+        >
+          <TextInput
+            placeholder="Nhập tuổi của bạn"
+            keyboardType="numeric"
+            value={age}
+            onChangeText={handleAgeChange}
+            style={{ width: 288 }}
+          />
+          <Text>cm</Text>
+        </View>
+        <Pressable
+          onPress={handleSubmit}
+          style={{ alignSelf: "center", marginTop: "5%" }}
+        >
+          <Text>Xác nhận</Text>
+        </Pressable>
+      </ImageBackground>
     </View>
   );
 }

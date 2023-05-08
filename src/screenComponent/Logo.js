@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <View
       style={{
-        marginTop: "10%",
+        marginTop: "5%",
         justifyContent: "center",
         alignSelf: "center",
         width: "63%",
@@ -14,10 +14,10 @@ const Logo = () => {
       <Text
         style={{
           textAlign: "center",
-          fontSize: 40,
+          fontSize: 30,
           lineHeight: 48,
           fontWeight: "700",
-          color: "#5193E1",
+          color: "#3E445F",
           textTransform: "uppercase",
         }}
       >

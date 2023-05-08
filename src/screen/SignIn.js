@@ -18,6 +18,7 @@ import {
 import { Checkbox } from "expo-checkbox";
 import Bottom from "../screenComponent/Bottom.js";
 import { useNavigation } from "@react-navigation/native";
+import { height } from "deprecated-react-native-prop-types/DeprecatedImagePropType.js";
 
 const Signin = () => {
   const navigation = useNavigation();
@@ -40,7 +41,7 @@ const Signin = () => {
     <View style={{ backgroundColor: "white", height: "100%" }}>
       <Logo />
       <View style={{ alignSelf: "center", marginTop: "8%" }}>
-        <Text style={{ fontSize: 20, fontWeight: 700, color: "#565B73" }}>
+        <Text style={{ fontSize: 20, fontWeight: 700, color: "#00113D" }}>
           Tạo tài khoản
         </Text>
       </View>
@@ -53,81 +54,91 @@ const Signin = () => {
         }}
       >
         <View style={styles.input}>
-          <FontAwesome5
-            name="user"
-            size={18}
-            color="#ADA4A5"
-            style={{ padding: 10 }}
-          />
-          <TextInput
-            onChangeText={(text) => setInput(text)}
-            placeholder="Tên"
-            style={{
-              color: "#ADA4A5",
-              width: "100%",
-            }}
-          />
-        </View>
-        <View style={styles.input}>
-          <Feather
-            name="phone"
-            size={18}
-            color="#ADA4A5"
-            style={{ padding: 10 }}
-          />
-          <TextInput
-            onChangeText={(text) => setInput(text)}
-            placeholder="Sô điện thoại"
-            style={{
-              color: "#ADA4A5",
-              width: "100%",
-            }}
-          />
-        </View>
-        <View style={styles.input}>
-          <Ionicons
-            name="ios-mail-outline"
-            size={18}
-            color="#ADA4A5"
-            style={{ padding: 10 }}
-          />
-          <TextInput
-            onChangeText={(text) => setInput(text)}
-            placeholder="Email"
-            style={{
-              color: "#ADA4A5",
-              width: "100%",
-            }}
-          />
-        </View>
-        <View style={styles.input}>
-          <MaterialIcons
-            name="lock-outline"
-            size={18}
-            color="#ADA4A5"
-            style={{ padding: 10 }}
-          />
-          <TextInput
-            secureTextEntry={passwordVisibility}
-            onChangeText={(text) => setInput(text)}
-            placeholder="Mật khẩu"
-            style={{
-              color: "#ADA4A5",
-              width: "80%",
-            }}
-            name="password"
-            autoCapitalize="none"
-            autoCorrect={false}
-            textContentType="newPassword"
-            enablesReturnKeyAutomatically
-          />
-          <Pressable onPress={handlePasswordVisibility}>
-            <MaterialCommunityIcons
-              name={rightIcon}
-              size={22}
+          <View style={styles.backgroundText}>
+            <FontAwesome5
+              name="user"
+              size={18}
               color="#ADA4A5"
+              style={{ padding: 10 }}
             />
-          </Pressable>
+            <TextInput
+              onChangeText={(text) => setInput(text)}
+              placeholder="Tên"
+              style={{
+                color: "#ADA4A5",
+                width: "100%",
+
+                height: 50,
+              }}
+            />
+          </View>
+        </View>
+        <View style={styles.input}>
+          <View style={styles.backgroundText}>
+            <Feather
+              name="phone"
+              size={18}
+              color="#ADA4A5"
+              style={{ padding: 10 }}
+            />
+            <TextInput
+              onChangeText={(text) => setInput(text)}
+              placeholder="Sô điện thoại"
+              style={{
+                color: "#ADA4A5",
+                width: "100%",
+              }}
+            />
+          </View>
+        </View>
+        <View style={styles.input}>
+          <View style={styles.backgroundText}>
+            <Ionicons
+              name="ios-mail-outline"
+              size={18}
+              color="#ADA4A5"
+              style={{ padding: 10 }}
+            />
+            <TextInput
+              onChangeText={(text) => setInput(text)}
+              placeholder="Email"
+              style={{
+                color: "#ADA4A5",
+                width: "100%",
+              }}
+            />
+          </View>
+        </View>
+        <View style={styles.input}>
+          <View style={styles.backgroundText}>
+            <MaterialIcons
+              name="lock-outline"
+              size={18}
+              color="#ADA4A5"
+              style={{ padding: 10 }}
+            />
+            <TextInput
+              secureTextEntry={passwordVisibility}
+              onChangeText={(text) => setInput(text)}
+              placeholder="Mật khẩu"
+              style={{
+                color: "#ADA4A5",
+                width: "80%",
+              }}
+              name="password"
+              autoCapitalize="none"
+              autoCorrect={false}
+              textContentType="newPassword"
+              enablesReturnKeyAutomatically
+            />
+            <Pressable onPress={handlePasswordVisibility}>
+              <MaterialCommunityIcons
+                name={rightIcon}
+                size={22}
+                color="#ADA4A5"
+              />
+            </Pressable>
+          </View>
         </View>
         <View style={styles.section}>
           <Checkbox
@@ -150,7 +161,7 @@ const Signin = () => {
           style={{
             flexDirection: "row",
             justifyContent: "center",
-            marginTop: "10%",
+            marginTop: "5%",
           }}
         >
           <View>
@@ -200,7 +211,7 @@ const styles = StyleSheet.create({
   btn: {
     marginTop: "6%",
     width: "100%",
-    backgroundColor: "#5193E1",
+    backgroundColor: "#4B6AB9",
     height: "8%",
     borderRadius: 90,
     alignItems: "center",
@@ -212,5 +223,13 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     textAlign: "center",
     fontWeight: "700",
+  },
+  backgroundText: {
+    flexDirection: "row",
+    alignItems: "center",
+    height: 50,
+    backgroundColor: "white",
+    borderRadius: 14,
+    width: "100%",
   },
 });

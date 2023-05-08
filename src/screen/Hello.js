@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -8,12 +8,26 @@ const Hello = () => {
   return (
     <Pressable
       onPress={() => navigation.navigate("AimForm")}
-      style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+      style={{
+        flex: 1,
+        alignSelf: "center",
+        bottom: "-5%",
+        position: "absolute",
+      }}
     >
-      <Text style={styles.text}>Chào TÙNG,</Text>
-      <Text style={styles.textdescription}>
-        Cùng làm quen nhau với vài câu hỏi nào!
-      </Text>
+      <View style={{ marginBottom: "20%" }}>
+        <Text style={styles.text}>Chào TÙNG,</Text>
+        <Text style={styles.textdescription}>
+          Cùng làm quen nhau với vài câu hỏi nào!
+        </Text>
+      </View>
+
+      <View>
+        <Image
+          source={require("../storages/bottomimg.png")}
+          style={{ alignSelf: "center", width: "135%" }}
+        />
+      </View>
     </Pressable>
   );
 };
@@ -26,6 +40,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#3E445F",
     textAlign: "center",
+    marginBottom: "4%",
   },
   textdescription: {
     fontSize: 16,

@@ -48,7 +48,7 @@ const LogIn = () => {
     <View style={{ backgroundColor: "white", height: "100%" }}>
       <Logo />
       <View style={{ alignSelf: "center", marginTop: "8%" }}>
-        <Text style={{ fontSize: 20, fontWeight: 700, color: "#565B73" }}>
+        <Text style={{ fontSize: 20, fontWeight: 700, color: "#00113D" }}>
           Đăng nhập
         </Text>
       </View>
@@ -61,49 +61,53 @@ const LogIn = () => {
         }}
       >
         <View style={styles.input}>
-          <Ionicons
-            name="ios-mail-outline"
-            size={18}
-            color="#ADA4A5"
-            style={{ padding: 10 }}
-          />
-          <TextInput
-            onChangeText={(text) => setInput(text)}
-            placeholder="Email / Số điện thoại"
-            style={{
-              color: "#ADA4A5",
-              width: "100%",
-            }}
-          />
+          <View style={styles.backgroundText}>
+            <Ionicons
+              name="ios-mail-outline"
+              size={18}
+              color="#ADA4A5"
+              style={{ padding: 10 }}
+            />
+            <TextInput
+              onChangeText={(text) => setInput(text)}
+              placeholder="Email / Số điện thoại"
+              style={{
+                color: "#ADA4A5",
+                width: "100%",
+              }}
+            />
+          </View>
         </View>
         <View style={styles.input}>
-          <MaterialIcons
-            name="lock-outline"
-            size={18}
-            color="#ADA4A5"
-            style={{ padding: 10 }}
-          />
-          <TextInput
-            secureTextEntry={passwordVisibility}
-            onChangeText={(text) => setInput(text)}
-            placeholder="Mật khẩu"
-            style={{
-              color: "#ADA4A5",
-              width: "80%",
-            }}
-            name="password"
-            autoCapitalize="none"
-            autoCorrect={false}
-            textContentType="newPassword"
-            enablesReturnKeyAutomatically
-          />
-          <Pressable onPress={handlePasswordVisibility}>
-            <MaterialCommunityIcons
-              name={rightIcon}
-              size={22}
+          <View style={styles.backgroundText}>
+            <MaterialIcons
+              name="lock-outline"
+              size={18}
               color="#ADA4A5"
+              style={{ padding: 10 }}
             />
-          </Pressable>
+            <TextInput
+              secureTextEntry={passwordVisibility}
+              onChangeText={(text) => setInput(text)}
+              placeholder="Mật khẩu"
+              style={{
+                color: "#ADA4A5",
+                width: "80%",
+              }}
+              name="password"
+              autoCapitalize="none"
+              autoCorrect={false}
+              textContentType="newPassword"
+              enablesReturnKeyAutomatically
+            />
+            <Pressable onPress={handlePasswordVisibility}>
+              <MaterialCommunityIcons
+                name={rightIcon}
+                size={22}
+                color="#ADA4A5"
+              />
+            </Pressable>
+          </View>
         </View>
         <TouchableOpacity
           style={styles.btn}
@@ -118,7 +122,7 @@ const LogIn = () => {
           style={{
             flexDirection: "row",
             justifyContent: "center",
-            marginTop: "10%",
+            marginTop: "5%",
           }}
         >
           <View>
@@ -153,7 +157,7 @@ const styles = StyleSheet.create({
   btn: {
     marginTop: "10%",
     width: "100%",
-    backgroundColor: "#5193E1",
+    backgroundColor: "#4B6AB9",
     height: "8%",
     borderRadius: 90,
     alignItems: "center",
@@ -165,5 +169,13 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     textAlign: "center",
     fontWeight: "700",
+  },
+  backgroundText: {
+    flexDirection: "row",
+    alignItems: "center",
+    height: 50,
+    backgroundColor: "white",
+    borderRadius: 14,
+    width: "100%",
   },
 });

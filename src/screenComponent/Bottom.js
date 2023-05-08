@@ -48,6 +48,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginHorizontal: "4%",
-    marginTop: "5%",
+    marginTop: "3%",
   },
 });

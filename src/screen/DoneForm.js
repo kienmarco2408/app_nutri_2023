@@ -37,7 +37,7 @@ const DoneForm = () => {
         />
       </View>
       <View style={{}}>
-        <View style={{ marginTop: "15%" }}>
+        <View style={{ marginTop: "5%" }}>
           <Text
             style={{
               textAlign: "center",
@@ -98,7 +98,7 @@ const DoneForm = () => {
         </View>
         <Text
           style={{
-            marginTop: "8%",
+            marginTop: "5%",
             textAlign: "center",
             fontWeight: "700",
             fontSize: 20,
@@ -112,7 +112,7 @@ const DoneForm = () => {
         </Text>
         <Text
           style={{
-            marginTop: "8%",
+            marginTop: "5%",
             textAlign: "center",
             fontWeight: "400",
             fontSize: 14,

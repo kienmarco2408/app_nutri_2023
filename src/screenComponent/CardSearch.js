@@ -54,7 +54,7 @@ const CardSearch = () => {
           </View>
           <View
             style={{
-              marginLeft: "34%",
+              marginLeft: "30%",
               borderRadius: 5,
               borderWidth: 1,
               height: 23,

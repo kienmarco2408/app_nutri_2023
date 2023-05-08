@@ -29,6 +29,7 @@ import DetailIngredient from "../screen/DetailIngredient";
 import MealDetail from "../screen/MealDetail";
 import DietDetail from "../screen/DietDetail";
 import DetailMenu from "../screen/DetailMenu";
+import HeightForm from "../screen/HeightForm";
 
 const HomeStack = createNativeStackNavigator();
 function HomeStacks() {
@@ -278,6 +279,7 @@ const RootStack = () => {
         <Stacks.Screen name="AimForm" component={AimForm} />
         <Stacks.Screen name="GenderForm" component={GenderForm} />
         <Stacks.Screen name="AgeForm" component={AgeForm} />
+        <Stacks.Screen name="HeightForm" component={HeightForm} />
         <Stacks.Screen name="WeightForm" component={WeightForm} />
         <Stacks.Screen name="WeightWantForm" component={WeightWantForm} />
         <Stacks.Screen name="MonthForm" component={MonthForm} />
