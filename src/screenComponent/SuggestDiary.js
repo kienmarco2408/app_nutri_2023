@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Image } from "react-native";
 import { TouchableOpacity } from "react-native";
@@ -10,7 +10,7 @@ import AddCard from "./AddCard";
 
 const SuggestDiary = () => {
   return (
-    <View>
+    <ScrollView style={{ height: "150%" }}>
       <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
         <TouchableOpacity
           style={{
@@ -75,7 +75,7 @@ const SuggestDiary = () => {
           <AddCard />
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Entypo, Feather } from "@expo/vector-icons";
 import HistoryDiaryAdd from "../screenComponent/HistoryDiaryAdd";
@@ -25,7 +25,7 @@ const HistoryDiary = () => {
     },
   ];
   return (
-    <View style={{ marginHorizontal: "8%" }}>
+    <ScrollView style={{ marginHorizontal: "8%", height: "150%" }}>
       <View
         style={{
           flexDirection: "row",
@@ -80,7 +80,7 @@ const HistoryDiary = () => {
       <View>
         <Text style={{ textAlign: "center" }}>Xem Thêm</Text>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

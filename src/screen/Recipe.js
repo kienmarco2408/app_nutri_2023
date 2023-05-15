@@ -83,25 +83,12 @@ const Recipe = () => {
             marginHorizontal: "7%",
           }}
         >
-          <TouchableOpacity
-            onPress={() => navigation.goBack()}
-            style={{
-              borderRadius: 6,
-              width: 30,
-              height: 30,
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: "white",
-            }}
-          >
-            <AntDesign name="arrowleft" size={20} color="#00113D" />
-          </TouchableOpacity>
           <Text
             style={{
               fontSize: 16,
               fontWeight: "700",
               textAlign: "center",
-              marginLeft: "20%",
+              marginLeft: "30%",
               color: "black",
               width: "40%",
             }}

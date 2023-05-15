@@ -18,7 +18,7 @@ const MenuForMeal = () => {
   const navigation = useNavigation();
   return (
     <View>
-      <ScrollView style={{ height: "160%" }}>
+      <ScrollView style={{ height: "135%" }}>
         <View
           style={{
             marginTop: "2%",
@@ -38,8 +38,8 @@ const MenuForMeal = () => {
             style={{
               flexDirection: "row",
               alignItems: "center",
-              marginLeft: "30%",
-              marginRight: "8%",
+              marginLeft: "25%",
+              marginRight: "5%",
             }}
           >
             <Ionicons name="flame" size={24} color="#00113D" />
@@ -96,8 +96,8 @@ const MenuForMeal = () => {
               style={{
                 flexDirection: "row",
                 alignItems: "center",
-                marginLeft: "30%",
-                marginRight: "8%",
+                marginLeft: "25%",
+                marginRight: "5%",
               }}
             >
               <Ionicons name="flame" size={24} color="#00113D" />
